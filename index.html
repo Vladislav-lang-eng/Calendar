@@ -1,1 +1,69 @@
-
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Календарь</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="calendar">
+            <!-- Шапка календаря -->
+            <div class="calendar-header">
+                <button id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                <h2 id="currentMonthYear">Декабрь 2024</h2>
+                <button id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+            
+            <!-- Дни недели -->
+            <div class="weekdays">
+                <div>Пн</div>
+                <div>Вт</div>
+                <div>Ср</div>
+                <div>Чт</div>
+                <div>Пт</div>
+                <div class="weekend">Сб</div>
+                <div class="weekend">Вс</div>
+            </div>
+            
+            <!-- Ячейки с днями -->
+            <div class="days" id="calendarDays">
+                <!-- Дни будут добавлены через JavaScript -->
+            </div>
+            
+            <!-- Панель управления -->
+            <div class="controls">
+                <button id="todayBtn" class="btn today-btn">Сегодня</button>
+                <button id="addEventBtn" class="btn add-btn">
+                    <i class="fas fa-plus"></i> Добавить событие
+                </button>
+            </div>
+        </div>
+        
+        <!-- Блок событий -->
+        <div class="events-sidebar">
+            <h3><i class="fas fa-calendar-check"></i> События на <span id="selectedDate">17 декабря</span></h3>
+            <div class="events-list" id="eventsList">
+                <div class="no-events">Нет событий на эту дату</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Модальное окно для добавления событий -->
+    <div class="modal" id="eventModal">
+        <div class="modal-content">
+            <h3><i class="fas fa-calendar-plus"></i> Новое событие</h3>
+            <input type="text" id="eventTitle" placeholder="Название события">
+            <textarea id="eventDescription" placeholder="Описание события"></textarea>
+            <div class="modal-buttons">
+                <button id="cancelBtn" class="btn cancel-btn">Отмена</button>
+                <button id="saveEventBtn" class="btn save-btn">Сохранить</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
